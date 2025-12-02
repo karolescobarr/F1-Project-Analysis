@@ -1,0 +1,17 @@
+# Interfaz web
+streamlit==1.39.0
+
+# Datos de F1
+fastf1==3.3.4
+
+# Análisis de datos
+pandas>=2.2.0
+numpy>=1.24.0
+
+# Visualizaciones
+matplotlib>=3.7.0
+plotly>=5.14.0
+seaborn>=0.12.0
+
+# Utilidades
+requests>=2.31.0

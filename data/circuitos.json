@@ -1,0 +1,26 @@
+{
+  "Monaco": {
+    "nombre": "Monaco",
+    "vueltas": 78,
+    "longitud_km": 3.337,
+    "tiempo_base_s": 74.0,
+    "abrasion": 0.4,
+    "pitlane_time_s": 21.0
+  },
+  "Monza": {
+    "nombre": "Monza",
+    "vueltas": 53,
+    "longitud_km": 5.793,
+    "tiempo_base_s": 84.95,
+    "abrasion": 0.9,
+    "pitlane_time_s": 23.0
+  },
+  "Silverstone": {
+    "nombre": "Silverstone",
+    "vueltas": 52,
+    "longitud_km": 5.891,
+    "tiempo_base_s": 90.0,
+    "abrasion": 0.8,
+    "pitlane_time_s": 22.0
+  }
+}

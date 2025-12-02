@@ -1,0 +1,32 @@
+{
+  "C1": {
+    "nombre": "Duro (C1)",
+    "grip_initial": 0.85,
+    "degradation_per_lap": 0.005,
+    "speed_factor": 0.97
+  },
+  "C2": {
+    "nombre": "Medio (C2)",
+    "grip_initial": 0.92,
+    "degradation_per_lap": 0.008,
+    "speed_factor": 1.0
+  },
+  "C3": {
+    "nombre": "Blando (C3)",
+    "grip_initial": 1.0,
+    "degradation_per_lap": 0.008,
+    "speed_factor": 1.03
+  },
+  "Intermedio": {
+    "nombre": "Intermedio",
+    "grip_initial": 0.88,
+    "degradation_per_lap": 0.01,
+    "speed_factor": 0.95
+  },
+  "Lluvia": {
+    "nombre": "Lluvia",
+    "grip_initial": 0.8,
+    "degradation_per_lap": 0.015,
+    "speed_factor": 0.9
+  }
+}
