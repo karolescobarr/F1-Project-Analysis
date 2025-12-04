@@ -11,18 +11,14 @@ simulaciones dinámicas.
 Este archivo explica cómo ejecutar el proyecto desde
 cualquier computador con Python instalado.
 
--------------------------------------------
 1. REQUISITOS NECESARIOS
--------------------------------------------
 
 ✔ Python 3.11 o superior (compatible con 3.13.5)
 ✔ Pip (gestor de paquetes de Python)
 ✔ Conexión a internet (FastF1 descarga datos reales)
 ✔ Las dependencias del archivo requirements.txt
 
--------------------------------------------
 2. INSTALACIÓN DE DEPENDENCIAS
--------------------------------------------
 
 1. Abrir una terminal en la carpeta del proyecto:
 
@@ -46,9 +42,7 @@ Si usas Windows y Python 3.13, usa:
 
    python -m pip install -r requirements.txt
 
--------------------------------------------
 3. EJECUTAR EL SIMULADOR
--------------------------------------------
 
 Una vez instaladas las dependencias:
 
@@ -61,15 +55,13 @@ Esto abrirá la aplicación en el navegador en la dirección:
 
    http://localhost:8501
 
--------------------------------------------
 4. ESTRUCTURA DEL PROYECTO
--------------------------------------------
 
 F1_SIMULATOR/
 │
 ├── main.py               → Interfaz principal Streamlit
 ├── simulador.py          → Lógica de simulación de carreras
-├── analisis_real.py      → Módulo para cargar datos reales con FastF1
+├── applista.py           → Módulo para cargar datos reales con FastF1
 │
 ├── assets/
 │   └── logo_f1.png       → Imagen del logo para la interfaz
@@ -82,9 +74,7 @@ F1_SIMULATOR/
 │
 └── resultados/           → Guardado de simulaciones en CSV
 
--------------------------------------------
-5. NOTAS IMPORTANTES
--------------------------------------------
+5. NOTAS 
 
 ✔ La carpeta fastf1_cache NO se debe borrar.
   FastF1 requiere esa carpeta para funcionar.
@@ -96,9 +86,7 @@ F1_SIMULATOR/
 ✔ Para detener el simulador:
   Presionar CTRL + C en la terminal.
 
--------------------------------------------
-6. SOPORTE / ERRORES COMUNES
--------------------------------------------
+6. ERRORES COMUNES
 
 • "Streamlit no se reconoce como comando":
   → Instala streamlit manualmente:
@@ -112,16 +100,4 @@ F1_SIMULATOR/
   → Abre manualmente el link:
       http://localhost:8501
 
--------------------------------------------
-7. CRÉDITOS
--------------------------------------------
 
-Proyecto universitario desarrollado para simular
-estrategias de carrera en Fórmula 1 con:
-- Streamlit
-- FastF1
-- Python 3.13
-
-===========================================
- FIN DEL README
-===========================================
