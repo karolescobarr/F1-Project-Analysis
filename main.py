@@ -1,18 +1,17 @@
 import streamlit as st
 import os
 
-# ==============================
-# CONFIGURACIÓN DE PÁGINA
-# ==============================
+
+# Configuración de página
+
 st.set_page_config(
     page_title="F1 Simulator - Proyecto Final",
     page_icon="🏎️",
     layout="centered"
 )
 
-# ==============================
-# ESTILO GLOBAL (AZUL-GRIS)
-# ==============================
+# Estilo azul y gris
+
 st.markdown("""
     <style>
         body {
@@ -56,18 +55,20 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# ==============================
-# LOGIN SIMULADO
-# ==============================
+# Suimulación de login, entrada
+
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 
 if not st.session_state.logged_in:
     # Mostrar logo de F1 centrado
-    st.image("assets/logo_f1.png", width=200)
+    try:
+        st.image("assets/logo_f1.png", width=200)
+    except:
+        st.markdown("### 🏎️")
+    
     st.markdown("<div class='title'>Simulador de Estrategias en Fórmula 1</div>", unsafe_allow_html=True)
     st.markdown("<div class='subtitle'>Inicio de sesión</div>", unsafe_allow_html=True)
-
 
     with st.form("login_form"):
         nombre = st.text_input("👤 Nombre del usuario:")
@@ -84,35 +85,57 @@ if not st.session_state.logged_in:
                 st.success(f"¡Bienvenido {nombre}! 🚀")
                 st.rerun()
 else:
-    # ==============================
-    # MENÚ PRINCIPAL
-    # ==============================
+    # Menú inicial
+
     st.markdown(f"<div class='userbox'>Usuario: <b>{st.session_state.nombre}</b> | Rol: {st.session_state.rol}</div>", unsafe_allow_html=True)
     st.markdown("<div class='title'>Panel Principal</div>", unsafe_allow_html=True)
     st.markdown("<div class='subtitle'>Proyecto Final - Ingeniería Aeroespacial (UDEA)</div>", unsafe_allow_html=True)
     st.divider()
 
-    # Primera fila: 2 botones
+    # Dos botones principales
     col1, col2 = st.columns(2)
+    
     with col1:
+
         if st.button("🏁 Simulador de Carrera"):
-            os.system("py -m streamlit run simulador.py")
+            os.system("streamlit run simulador.py")
 
     with col2:
-        if st.button("📊 Análisis Real F1"):
-            os.system("py -m streamlit run analisis_real.py")
+        if st.button("🏎️ F1 Análisis"):
+            os.system("streamlit run applista.py")
 
     st.divider()
 
-    # Segunda fila: 1 botón centrado para la nueva app
-    col_center = st.columns([1, 2, 1])
-    with col_center[1]:
-        if st.button("🏎️ F1 Analytics Pro"):
-            os.system("py -m streamlit run applista.py")
+    # Información de los módulos
+    st.markdown("### 📋 Módulos Disponibles")
+    
+    info_col1, info_col2 = st.columns(2)
+    
+    with info_col1:
+        st.info("""
+        **🏁 Simulador de Carrera**
+        
+        - Simula carreras completas
+        - Clima dinámico
+        - Temperatura de neumáticos
+        - Comparación de estrategias
+        - Eventos aleatorios
+        """)
+    
+    with info_col2:
+        st.info("""
+        **🏎️ F1 Análisis**
+        
+        - Análisis de datos reales
+        - Resultados y clasificaciones
+        - Análisis de neumáticos
+        - Comparación de pilotos
+        - Estadísticas detalladas
+        """)
 
     st.divider()
 
-    # Tercera fila: Cerrar sesión
+    # Botón cerrar sesión
     col3, col4 = st.columns(2)
     with col3:
         if st.button("🔄 Cerrar sesión"):
